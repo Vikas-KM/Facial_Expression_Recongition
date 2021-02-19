@@ -14,11 +14,62 @@ root = Path().cwd() / "images"
 # Images downloaded and cleaned, so commented below code
 # More info on the imagescrapper lib used here: https://pypi.org/project/jmd-imagescraper/
 
-# duckduckgo_search(root, "Angry", "angry face people", max_results=10000)
-# duckduckgo_search(root, "Happy", "happy face people", max_results=10000)
-# duckduckgo_search(root, "Neutral", "neutral face people", max_results=10000)
-# duckduckgo_search(root, "Sad", "sad face people", max_results=10000)
-# duckduckgo_search(root, "Fear", "fear face people", max_results=10000)
+# duckduckgo_search(root, "Angry", "angry face", max_results=1000)
+# duckduckgo_search(root, "Angry", "angry face male", max_results=1000)
+# duckduckgo_search(root, "Angry", "angry face female", max_results=1000)
+# duckduckgo_search(root, "Angry", "angry face boy", max_results=1000)
+# duckduckgo_search(root, "Angry", "angry face girl", max_results=1000)
+# duckduckgo_search(root, "Angry", "angry face person", max_results=1000)
+# duckduckgo_search(root, "Angry", "angry face human", max_results=1000)
+#
+# duckduckgo_search(root, "Happy", "happy face people", max_results=1000)
+# duckduckgo_search(root, "Happy", "happy face male", max_results=1000)
+# duckduckgo_search(root, "Happy", "happy face female", max_results=1000)
+# duckduckgo_search(root, "Happy", "happy face boy", max_results=1000)
+# duckduckgo_search(root, "Happy", "happy face girl", max_results=1000)
+# duckduckgo_search(root, "Happy", "happy face person", max_results=1000)
+# duckduckgo_search(root, "Happy", "happy face human", max_results=1000)
+
+# duckduckgo_search(root, "Neutral", "neutral face people", max_results=1000)
+# duckduckgo_search(root, "Neutral", "neutral face male", max_results=1000)
+# duckduckgo_search(root, "Neutral", "neutral face female", max_results=1000)
+# duckduckgo_search(root, "Neutral", "neutral face boy", max_results=1000)
+# duckduckgo_search(root, "Neutral", "neutral face girl", max_results=1000)
+# duckduckgo_search(root, "Neutral", "neutral face person", max_results=1000)
+# duckduckgo_search(root, "Neutral", "neutral face human", max_results=1000)
+
+# duckduckgo_search(root, "Sad", "sad face people", max_results=1000)
+# duckduckgo_search(root, "Sad", "sad face male", max_results=1000)
+# duckduckgo_search(root, "Sad", "sad face female", max_results=1000)
+# duckduckgo_search(root, "Sad", "sad face boy", max_results=1000)
+# duckduckgo_search(root, "Sad", "sad face girl", max_results=1000)
+# duckduckgo_search(root, "Sad", "sad face person", max_results=1000)
+# duckduckgo_search(root, "Sad", "sad face human", max_results=1000)
+#
+# duckduckgo_search(root, "Fear", "fear face people", max_results=1000)
+# duckduckgo_search(root, "Fear", "fear face male", max_results=1000)
+# duckduckgo_search(root, "Fear", "fear face female", max_results=1000)
+# duckduckgo_search(root, "Fear", "fear face boy", max_results=1000)
+# duckduckgo_search(root, "Fear", "fear face girl", max_results=1000)
+# duckduckgo_search(root, "Fear", "fear face person", max_results=1000)
+# duckduckgo_search(root, "Fear", "fear face human", max_results=1000)
+#
+# duckduckgo_search(root, "Disgust", "disgust face people", max_results=1000)
+# duckduckgo_search(root, "Disgust", "disgust face male", max_results=1000)
+# duckduckgo_search(root, "Disgust", "disgust face female", max_results=1000)
+# duckduckgo_search(root, "Disgust", "disgust face boy", max_results=1000)
+# duckduckgo_search(root, "Disgust", "disgust face girl", max_results=1000)
+# duckduckgo_search(root, "Disgust", "disgust face person", max_results=1000)
+# duckduckgo_search(root, "Disgust", "disgust face human", max_results=1000)
+#
+# duckduckgo_search(root, "Surprise", "surprise face people", max_results=1000)
+# duckduckgo_search(root, "Surprise", "surprise face male", max_results=1000)
+# duckduckgo_search(root, "Surprise", "surprise face female", max_results=1000)
+# duckduckgo_search(root, "Surprise", "surprise face boy", max_results=1000)
+# duckduckgo_search(root, "Surprise", "surprise face girl", max_results=1000)
+# duckduckgo_search(root, "Surprise", "surprise face person", max_results=1000)
+# duckduckgo_search(root, "Surprise", "surprise face human", max_results=1000)
+
 
 # Steps
 # Data needs to be split into train and test folders
