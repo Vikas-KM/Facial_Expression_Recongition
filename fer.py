@@ -70,13 +70,6 @@ root = Path().cwd() / "images"
 # duckduckgo_search(root, "Surprise", "surprise face person", max_results=1000)
 # duckduckgo_search(root, "Surprise", "surprise face human", max_results=1000)
 
-
-# Steps
-# Data needs to be split into train and test folders
-# Data needs to be augmented - ImageDataGenerator
-# Data needs to be rescaled / Normalized
-
-
 training_dir = './images/train'
 test_dir = './images/test'
 
@@ -108,38 +101,39 @@ test_generator = test_datagen.flow_from_directory(
     batch_size=32,
 )
 
+# TODO - Implement ResNet-50
 model = tf.keras.Sequential([
-    tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(48, 48, 1)),
-    tf.keras.layers.MaxPooling2D(2, 2),
-    tf.keras.layers.Dropout(0.2),
-
-    tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
-    tf.keras.layers.MaxPooling2D(2, 2),
-    tf.keras.layers.Dropout(0.2),
-
-    tf.keras.layers.Conv2D(128, (3, 3), activation='relu'),
-    tf.keras.layers.MaxPooling2D(2, 2),
-    tf.keras.layers.Dropout(0.2),
-
-    # tf.keras.layers.Conv2D(256, (3, 3), activation='relu'),
+    # tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(48, 48, 1)),
     # tf.keras.layers.MaxPooling2D(2, 2),
     # tf.keras.layers.Dropout(0.2),
     #
-    # tf.keras.layers.Conv2D(512, (3, 3), activation='relu'),
+    # tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
     # tf.keras.layers.MaxPooling2D(2, 2),
     # tf.keras.layers.Dropout(0.2),
-
-    tf.keras.layers.Flatten(),
-
-    tf.keras.layers.Dense(64, activation='relu'),
-    # tf.keras.layers.BatchNormalization(),
-    tf.keras.layers.Dropout(0.5),
-
-    tf.keras.layers.Dense(64, activation='relu'),
-    # tf.keras.layers.BatchNormalization(),
-    tf.keras.layers.Dropout(0.5),
-
-    tf.keras.layers.Dense(7, activation='softmax')
+    #
+    # tf.keras.layers.Conv2D(128, (3, 3), activation='relu'),
+    # tf.keras.layers.MaxPooling2D(2, 2),
+    # tf.keras.layers.Dropout(0.2),
+    #
+    # # tf.keras.layers.Conv2D(256, (3, 3), activation='relu'),
+    # # tf.keras.layers.MaxPooling2D(2, 2),
+    # # tf.keras.layers.Dropout(0.2),
+    # #
+    # # tf.keras.layers.Conv2D(512, (3, 3), activation='relu'),
+    # # tf.keras.layers.MaxPooling2D(2, 2),
+    # # tf.keras.layers.Dropout(0.2),
+    #
+    # tf.keras.layers.Flatten(),
+    #
+    # tf.keras.layers.Dense(64, activation='relu'),
+    # # tf.keras.layers.BatchNormalization(),
+    # tf.keras.layers.Dropout(0.5),
+    #
+    # tf.keras.layers.Dense(64, activation='relu'),
+    # # tf.keras.layers.BatchNormalization(),
+    # tf.keras.layers.Dropout(0.5),
+    #
+    # tf.keras.layers.Dense(7, activation='softmax')
 ])
 
 print(model.summary())

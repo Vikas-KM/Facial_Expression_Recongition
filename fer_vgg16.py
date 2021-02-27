@@ -10,7 +10,8 @@ Original file is located at
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-!unzip "/content/drive/My Drive/fer.zip" -d "/content/drive/My Drive/fer"
+# When running on colab
+! unzip "/content/drive/My Drive/fer.zip" -d "/content/drive/My Drive/fer"
 
 train_dir = '/content/drive/MyDrive/fer/images/images/train/'
 validation_dir = '/content/drive/MyDrive/fer/images/images/validation/'
@@ -55,7 +56,6 @@ model = tf.keras.Sequential([
     tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=2),
     tf.keras.layers.Dropout(0.2),
 
-
     tf.keras.layers.Conv2D(128, (3, 3), padding='same',activation='relu'),
     tf.keras.layers.BatchNormalization(),
     tf.keras.layers.Conv2D(128, (3, 3), padding='same',activation='relu'),
@@ -97,70 +97,10 @@ model = tf.keras.Sequential([
     tf.keras.layers.BatchNormalization(),
     tf.keras.layers.Dropout(0.5),
 
-
-    # tf.keras.layers.Dense(32, activation='relu'),
-    # tf.keras.layers.BatchNormalization(),
-    # tf.keras.layers.Dropout(0.5),
-
     tf.keras.layers.Dense(7, activation='softmax')
 ])
 
-# model = tf.keras.Sequential([
-#     tf.keras.layers.Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=(img_height, img_width, 3)),
-#     tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(64, (3, 3), padding='same', activation='relu', input_shape=(img_height, img_width, 3)),
-#     # tf.keras.layers.BatchNormalization(),
-#     tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
-#     tf.keras.layers.Dropout(0.2),
-
-
-#     tf.keras.layers.Conv2D(64, (3, 3), padding='same',activation='relu'),
-#     tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(128, (3, 3), padding='same',activation='relu'),
-#     # tf.keras.layers.BatchNormalization(),
-#     tf.keras.layers.MaxPooling2D(2, 2),
-#     tf.keras.layers.Dropout(0.2),
-
-#     tf.keras.layers.Conv2D(64, (3, 3), padding='same',activation='relu'),
-#     tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(256, (3, 3), padding='same',activation='relu'),
-#     # tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(256, (3, 3), padding='same',activation='relu'),
-#     tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
-#     tf.keras.layers.Dropout(0.2),
-
-#     tf.keras.layers.Conv2D(128, (3, 3), padding='same',activation='relu'),
-#     tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(512, (3, 3), padding='same',activation='relu'),
-#     # tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(512, (3, 3), padding='same',activation='relu'),
-#     tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
-#     tf.keras.layers.Dropout(0.2),
-
-#     # tf.keras.layers.Conv2D(512, (3, 3), padding='same',activation='relu'),
-#     # # tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(512, (3, 3), padding='same',activation='relu'),
-#     # # tf.keras.layers.BatchNormalization(),
-#     # tf.keras.layers.Conv2D(512, (3, 3), padding='same',activation='relu'),
-#     # tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=2),
-#     # tf.keras.layers.Dropout(0.2),
-
-#     tf.keras.layers.Flatten(),
-
-#     tf.keras.layers.Dense(64, activation='relu'),
-#     # tf.keras.layers.Dense(4096, activation='relu'),
-#     # tf.keras.layers.Dense(1024, activation='relu'),
-
-#     tf.keras.layers.BatchNormalization(),
-#     tf.keras.layers.Dropout(0.5),
-
-#     tf.keras.layers.Dense(64, activation='relu'),
-#     tf.keras.layers.BatchNormalization(),
-#     tf.keras.layers.Dropout(0.5),
-
-#     tf.keras.layers.Dense(1, activation='sigmoid')
-# ])
-
+# Checking the Model Summary for Paramters
 print(model.summary())
 
 model.compile(
@@ -179,21 +119,18 @@ history = model.fit(
   validation_steps = 220,
 )
 
-# Commented out IPython magic to ensure Python compatibility.
 import matplotlib.pyplot as plt 
-# %matplotlib inline
+%matplotlib inline
 
+# Train Accuracy vs Validation Accuracy Plot
 plt.plot(history.history['accuracy'], label='accuracy')
 plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
-plt.ylim([0.5, 1])
+# plt.ylim([0.5, 1])
 plt.legend()
 
-# Commented out IPython magic to ensure Python compatibility.
-import matplotlib.pyplot as plt 
-# %matplotlib inline
-
+# Train Loss vs Validation Loss Plot
 plt.plot(history.history['loss'], label='loss')
 plt.plot(history.history['val_loss'], label = 'val_loss')
 plt.xlabel('Epoch')
